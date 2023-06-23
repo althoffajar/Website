@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+        <meta name = "viewpoint"
+        content="width=device-width",
+        initial-scale="1.0">
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="Login.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital@1&family=Open+Sans:ital,wght@0,400;0,700;1,500&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/289c0bc797.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="Container">
+        <div class="Form">
+            <h1 id="FormHeader">Sign Up</h1>
+            <form>
+                <div class="Inputs">
+                    <div class="Input-field">
+                        <i class="fa fa-envelope-open-o" aria-hidden="true"></i>
+                        <input type="email" placeholder="Email">
+                    </div>
+                    <div class="Input-field" id="UserInput">
+                        <i class="fa fa-address-book" aria-hidden="true"></i>
+                        <input type="text" placeholder="Username">
+                    </div>
+                    <div class="Input-field">
+                        <i class="fa fa-asterisk" aria-hidden="true"></i>
+                        <input type="password" placeholder="Password">
+                    </div>
+                    <div class="Buttons">
+                        <button type="button" id="CreateButton">Create Account</button>
+                        <button type="button" id="SignInButton" class="disable">Sign In</button>
+                    </div>
+                    <div>
+                        <button href="#" id="LoginOrCreateLink">Already Have An Account? Go Login!</button>
+                    </div>
+                    <a href="#"> Forget Password? </a>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src = "./web.js"></script>
+</body>
