@@ -11,34 +11,61 @@
     <script src="https://kit.fontawesome.com/289c0bc797.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <div class="Container">
-        <div class="Form">
-            <h1 id="FormHeader">Sign Up</h1>
-            <form>
-                <div class="Inputs">
-                    <div class="Input-field">
-                        <i class="fa fa-envelope-open-o" aria-hidden="true"></i>
-                        <input type="email" placeholder="Email">
-                    </div>
-                    <div class="Input-field" id="UserInput">
-                        <i class="fa fa-address-book" aria-hidden="true"></i>
-                        <input type="text" placeholder="Username">
-                    </div>
-                    <div class="Input-field">
-                        <i class="fa fa-asterisk" aria-hidden="true"></i>
-                        <input type="password" placeholder="Password">
-                    </div>
-                    <div class="Buttons">
-                        <button type="button" id="CreateButton">Create Account</button>
-                        <button type="button" id="SignInButton" class="disable">Sign In</button>
-                    </div>
-                    <div>
-                        <button href="#" id="LoginOrCreateLink">Already Have An Account? Go Login!</button>
-                    </div>
-                    <a href="#"> Forget Password? </a>
+    <div class="Content">
+        <form class="Inputs Inputs_Hide" id="Sign In">
+            <h1 class="Header">Sign In</h1>
+            <div class="Message Message_Error">Details Incorrect</div>
+            <div class="Input_Field" id="UserInput">
+                <i class="fa fa-address-book" aria-hidden="true"></i>
+                <input type="text" class="Input_Field_Input" placeholder="Username">
+                <div class="Input_Field_Input_Error"></div>
+            </div>
+            <div class="Input_Field">
+                <i class="fa fa-asterisk" aria-hidden="true"></i>
+                <input type="password" class = "Input_Field_Input Input_Field_Input_Error" placeholder="Password">
+            </div>
+            <div class="Buttons">
+                <button type="button" id="CreateButton">Create Account</button>
+                <button type="button" id="SignInButton" class="disable">Sign In</button>
+            </div>
+            <div class="Links">
+                <button href="#" class="Links_Link" id="LoginOrCreateLink">Create your account</button>
+            </div>
+            <div class="Links">
+                <button href="#" class="Links_Link" id="LoginOrCreateLink">Forgot Password</button>
+            </div>
+            </div>
+        </form>
+        <form class="Inputs" id="CreateAccount">
+            <h1 class="Header">Create Account</h1>
+            <div class="Message Message_Error">Details Incorrect</div>
+            <div class="Input_Field">
+                <i class="fa fa-envelope-open-o" aria-hidden="true"></i>
+                <input type="email" class="Input_Field_Input" placeholder="Email">
+            </div>
+                <div class="Input_Field" id="UserInput">
+                    <i class="fa fa-address-book" aria-hidden="true"></i>
+                    <input type="text" class="Input_Field_Input" placeholder="Username">
+                    <div class="Input_Field_Input_Error"></div>
                 </div>
-            </form>
-        </div>
+                <div class="Input_Field">
+                    <i class="fa fa-asterisk" aria-hidden="true"></i>
+                    <input type="password" class = "Input_Field_Input" placeholder="Password">
+                </div>
+                <div class="Input_Field">
+                    <i class="fa fa-asterisk" aria-hidden="true"></i>
+                    <input type="password" class = "Input_Field_Input" placeholder="Confirm Password">
+                </div>
+                <div class="Buttons">
+                    <button type="button" id="CreateButton">Create Account</button>
+                    <button type="button" id="SignInButton" class="disable">Sign In</button>
+                </div>
+                <div class="Links">
+                    <button href="#" class="Links_Link" id="CreateLogin">Already Have An Account? Please Login!</button>
+                </div>
+            </div>
+        </form>
     </div>
+
     <script src = "./web.js"></script>
 </body>
