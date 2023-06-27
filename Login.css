@@ -33,7 +33,8 @@ body{
     font : 500 1rem 'Quicksand', sans-serif;
 }*/
 
-.Inputs_Hide {
+
+.Inputs_DisplayNone {
     display: none;
 }
 
@@ -51,7 +52,7 @@ body{
     margin-bottom: 1rem;
 }
 
-.Message_Error {
+.Message_Failed {
     color: red;
 }
 

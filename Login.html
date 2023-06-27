@@ -12,9 +12,9 @@
 </head>
 <body>
     <div class="Content">
-        <form class="Inputs Inputs_Hide" id="Sign In">
+        <form class="Inputs Inputs_DisplayNone" id="SignInPage">
             <h1 class="Header">Sign In</h1>
-            <div class="Message Message_Error">Details Incorrect</div>
+            <div class="Message Message_Failed"></div>
             <div class="Input_Field" id="UserInput">
                 <i class="fa fa-address-book" aria-hidden="true"></i>
                 <input type="text" class="Input_Field_Input" placeholder="Username">
@@ -25,47 +25,37 @@
                 <input type="password" class = "Input_Field_Input Input_Field_Input_Error" placeholder="Password">
             </div>
             <div class="Buttons">
-                <button type="button" id="CreateButton">Create Account</button>
+                <button type="button" id="ButtonToCreateAccount">Create Account</button>
                 <button type="button" id="SignInButton" class="disable">Sign In</button>
             </div>
-            <div class="Links">
-                <button href="#" class="Links_Link" id="LoginOrCreateLink">Create your account</button>
-            </div>
-            <div class="Links">
-                <button href="#" class="Links_Link" id="LoginOrCreateLink">Forgot Password</button>
-            </div>
-            </div>
+            <!--<div class="Links"><button href="#" class="Links_Link" id="LinkCreateAccount">Create your account</button></div>-->
         </form>
-        <form class="Inputs" id="CreateAccount">
-            <h1 class="Header">Create Account</h1>
-            <div class="Message Message_Error">Details Incorrect</div>
+        <form class="Input" id="CreateAccountPage">
+            <h1 class="Header">Create Your Account</h1>
+            <div class="Message Message_Error"></div>
             <div class="Input_Field">
                 <i class="fa fa-envelope-open-o" aria-hidden="true"></i>
                 <input type="email" class="Input_Field_Input" placeholder="Email">
             </div>
-                <div class="Input_Field" id="UserInput">
-                    <i class="fa fa-address-book" aria-hidden="true"></i>
-                    <input type="text" class="Input_Field_Input" placeholder="Username">
-                    <div class="Input_Field_Input_Error"></div>
-                </div>
-                <div class="Input_Field">
-                    <i class="fa fa-asterisk" aria-hidden="true"></i>
-                    <input type="password" class = "Input_Field_Input" placeholder="Password">
-                </div>
-                <div class="Input_Field">
-                    <i class="fa fa-asterisk" aria-hidden="true"></i>
-                    <input type="password" class = "Input_Field_Input" placeholder="Confirm Password">
-                </div>
-                <div class="Buttons">
-                    <button type="button" id="CreateButton">Create Account</button>
-                    <button type="button" id="SignInButton" class="disable">Sign In</button>
-                </div>
-                <div class="Links">
-                    <button href="#" class="Links_Link" id="CreateLogin">Already Have An Account? Please Login!</button>
-                </div>
+            <div class="Input_Field" id="UserInput">
+                <i class="fa fa-address-book" aria-hidden="true"></i>
+                <input type="text" class="Input_Field_Input" placeholder="Username">
+                <div class="Input_Field_Input_Error"></div>
             </div>
+            <div class="Input_Field">
+                <i class="fa fa-asterisk" aria-hidden="true"></i>
+                <input type="password" class = "Input_Field_Input Input_Field_Input_Error" placeholder="Password">
+            </div>
+            <div class="Input_Field">
+                <i class="fa fa-asterisk" aria-hidden="true"></i>
+                <input type="password" class = "Input_Field_Input" placeholder="Confirm Password">
+            </div>
+            <div class="Buttons">
+                <button type="button" id="ButtonSignInPage">Sign In</button>
+                <button type="button" id="CreateButton" class="disable">Create Account</button>
+            </div>
+            <!--<div class="Links"><button href="#" class="Links_Link" id="LinkSignIn">Sign in if you have an account</button></div>-->
         </form>
     </div>
-
     <script src = "./web.js"></script>
 </body>
