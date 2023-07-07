@@ -1,9 +1,10 @@
 GET http://localhost:3000/listOfPosts
-
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiVGVzdDIiLCJpYXQiOjE2ODg3Njc2NTd9.4CYAjVKCG_zZKUxMhK1uulxuK4g0LtRPs9fzgx7nW2w
 ###
 
 POST http://localhost:3000/signIn
 Content-Type: application/json
+
 {
-    "Username" : "Test"
+    "Username" : "Test2"
 }

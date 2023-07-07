@@ -18,14 +18,19 @@ const JWRequire = require('jsonwebtoken')
 
 const listOfPosts = [
     {
-        Id : 1,
+        id : 1,
         Email : 'althoffajar1@gmail.com',
         Username : 'Test'
+    },
+    {
+        id : 2,
+        Email : 'althoffajar3@gmail.com',
+        Username : 'Test2'
     }
 ]//lists of posts
 
-Web.get('/listOfPosts', (request, response) => {
-    response.json(listOfPosts)
+Web.get('/listOfPosts', authenticate, (request, response) => {
+    response.json(listOfPosts.filter(post => post.Username === request.User.name))
 })//Gets or returns the post
 
 Web.post('/signIn', (request, response) =>{
@@ -38,5 +43,18 @@ Web.post('/signIn', (request, response) =>{
         process.env.ACCESS_TOKEN_SECRET)
     response.json({token: token})
 })
+
+function authenticate (request, response, next){
+    //Recieves the token and verifies if its the right token, then returns the user to the posts
+    const Header = request.headers['authorization']
+    const token = Header && Header.split(' ')[1]
+    if (token == null) return response.sendStatus(401) //sendStatus
+
+    JWRequire.verify(token, process.env.ACCESS_TOKEN_SECRET, (error, User) => {
+        if(error) return response.sendStatus(403)
+        request.User=User
+        next()
+    })
+}
 
 Web.listen(3000)
