@@ -1,4 +1,54 @@
-//tester: console.log("Buna!")
+/* Basic Login 
+Download the following: 
+$npm i passport passport-local express-session express-flash
+*/
+
+const express = require('express')
+const Web = express()
+const bcrypt = require('bcrypt')
+const passport = require('passport')
+
+const Passport_Initialize = require('./PassportFile')
+
+const ListOfUser = []
+
+Web.set('view-engine','ejs')
+Web.use(express.urlencoded({extended: false}))
+
+Web.get('/', (request, response) =>{
+    response.render('Index.ejs', {username : 'Althof'})
+})
+
+Web.get('/Signin', (request, response) =>{
+    response.render('Signin.ejs')
+})
+
+Web.get('/Signup', (request, response) =>{
+    response.render('Signup.ejs')
+})
+
+Web.post('/Signup', async (request, response) =>{
+    try{
+        const password_hashed = await bcrypt.hash(request.body.password, 10)
+        ListOfUser.push({
+            id : Date.now().toString(),
+            email: request.body.email,
+            username : request.body.username,
+            password: password_hashed
+        })
+        response.redirect('/Signin')
+    } 
+    catch (e) {
+        console.log(e)
+        response.redirect('/Signup')
+    }
+    console.log(ListOfUser)
+})
+
+Web.listen(3000)
+
+/*------------For JWT Login-------------------
+
 // Download RESt Client extension
 
 //Do the following to run
@@ -56,5 +106,4 @@ function authenticate (request, response, next){
         next()
     })
 }
-
-Web.listen(3000)
+*/
