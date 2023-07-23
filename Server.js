@@ -1,19 +1,44 @@
 /* Basic Login 
 Download the following: 
 $npm i passport passport-local express-session express-flash
+
+// Download RESt Client extension
+
+Do the following to run on bash
+$ npm run devStart
+> nodemon Server.js
 */
 
+if (process.env.NODE_ENV !== 'production'){
+    require("dotenv").config()
+}
+
 const express = require('express')
+const express_flash = require('express-flash')
+const express_session = require('express-session')
 const Web = express()
 const bcrypt = require('bcrypt')
 const passport = require('passport')
-
 const Passport_Initialize = require('./PassportFile')
+const flash = require('express-flash')
+
+Passport_Initialize(
+    passport, 
+    username => ListOfUser.find(user => user.username === username)),
+    id => ListOfUser.find(user => user.id === id)
 
 const ListOfUser = []
 
 Web.set('view-engine','ejs')
 Web.use(express.urlencoded({extended: false}))
+Web.use(express_flash())
+Web.use(express_session({
+    secret: process.env.SESSION_SECRET,
+    resave : false,
+    saveUninitialized : false
+}))
+Web.use(passport.initialize()) //Web.use(passport.Initialize())
+Web.use(passport.session())
 
 Web.get('/', (request, response) =>{
     response.render('Index.ejs', {username : 'Althof'})
@@ -24,8 +49,15 @@ Web.get('/Signin', (request, response) =>{
 })
 
 Web.get('/Signup', (request, response) =>{
-    response.render('Signup.ejs')
+    response.render('Signup.ejs'/*, passport.authenticate('')*/)
 })
+
+Web.post('/Signin', passport.authenticate('local', {
+    successRedirect:"/",
+    failureRedirect: "/Signin",
+    failureFlash : true
+}))
+
 
 Web.post('/Signup', async (request, response) =>{
     try{
@@ -48,12 +80,6 @@ Web.post('/Signup', async (request, response) =>{
 Web.listen(3000)
 
 /*------------For JWT Login-------------------
-
-// Download RESt Client extension
-
-//Do the following to run
-// $ npm run devStart
-// > nodemon Server.js
 
 const cons = require('consolidate')
 const { configDotenv } = require('dotenv')

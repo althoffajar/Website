@@ -1,0 +1,35 @@
+<head>
+    <meta charset="UTF-8">
+        <meta name = "viewpoint"
+        content="width=device-width",
+        initial-scale="1.0">
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="Login.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital@1&family=Open+Sans:ital,wght@0,400;0,700;1,500&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/289c0bc797.js" crossorigin="anonymous"></script>
+    <script></script>
+</head>
+<body>
+    <div class="Content">
+        <form class="Inputs Inputs_DisplayNone" id="SignInPage">
+            <h1 class="Header">Sign In</h1>
+            <% if (messages.error) { %>
+                <%= messages.error %>
+              <% } %>
+            <div class="Input_Field" id="UserInput">
+                <i class="fa fa-address-book" aria-hidden="true"></i>
+                <input type="text" class="Input_Field_Input" placeholder="Username" name="username">
+                <div class="Input_Field_Input_Error"></div>
+            </div>
+            <div class="Input_Field">
+                <i class="fa fa-asterisk" aria-hidden="true"></i>
+                <input type="password" class = "Input_Field_Input Input_Field_Input_Error" placeholder="Password" name="password">
+            </div>
+            <div class="Buttons">
+                <button type="submit" id="SignInButton">Sign In</button>
+            </div>
+            <a href="/Signup">Sign Up Here</a>
+        </form>
+    </div>
+</body>

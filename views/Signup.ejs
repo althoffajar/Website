@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+        <meta name = "viewpoint"
+        content="width=device-width",
+        initial-scale="1.0">
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="Login.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital@1&family=Open+Sans:ital,wght@0,400;0,700;1,500&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/289c0bc797.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="Content">
+        <form class="Input" id="CreateAccountPage"
+        action="/Signup" method="POST">
+            <h1 class="Header">Create Your Account</h1>
+            <div class="Message Message_Error"></div>
+            <div class="Input_Field">
+                <i class="fa fa-envelope-open-o" aria-hidden="true"></i>
+                <input type="email" class="Input_Field_Input" 
+                placeholder="Email" name="email" id="email">
+            </div>
+            <div class="Input_Field" id="UserInput">
+                <i class="fa fa-address-book" aria-hidden="true"></i>
+                <input type="text" class="Input_Field_Input" 
+                placeholder="Username" name="username" id="username">
+                <div class="Input_Field_Input_Error"></div>
+            </div>
+            <div class="Input_Field">
+                <i class="fa fa-asterisk" aria-hidden="true"></i>
+                <input type="password" class = "Input_Field_Input Input_Field_Input_Error" 
+                placeholder="Password" id="password" name="password" required>
+            </div>
+            <div class="Buttons">
+                <button type="submit">Create Account</button>
+            </div>
+            <a href="/Signin">Sign In</a>
+        </form>
+    </div>
+</body>
