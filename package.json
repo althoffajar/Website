@@ -1,0 +1,41 @@
+{
+  "name": "website",
+  "version": "1.0.0",
+  "description": "",
+  "dependencies": {
+    "axios": "^1.4.0",
+    "deepmerge": "^2.2.1",
+    "follow-redirects": "^1.15.2",
+    "formik": "^2.4.2",
+    "hoist-non-react-statics": "^3.3.2",
+    "if-env": "^1.0.4",
+    "js-tokens": "^4.0.0",
+    "lodash-es": "^4.17.21",
+    "loose-envify": "^1.4.0",
+    "proxy-from-env": "^1.1.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-fast-compare": "^2.0.4",
+    "react-is": "^16.13.1",
+    "react-router": "^6.14.2",
+    "react-router-dom": "^6.14.2",
+    "scheduler": "^0.23.0",
+    "tiny-warning": "^1.0.3",
+    "tslib": "^2.6.1"
+  },
+  "scripts": {
+    "build": "if-env TYPE=Server-Side && (cd Server-Side && npm install) || (cd Client-Side && npm install)",
+    "server" : "node ./Server-Side/Server.js",
+    "client" : "cd Client-Side && npm start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/althoffajar/Website.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/althoffajar/Website/issues"
+  },
+  "homepage": "https://github.com/althoffajar/Website#readme"
+}
